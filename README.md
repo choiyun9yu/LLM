@@ -7,7 +7,7 @@
 
 ### Quick Start  
 > % curl -fsSL https://ollama.com/install.sh | sh    # 설치
-> > % sudo systemctl start ollama   # 정지  
+> % sudo systemctl start ollama   # 정지  
 > % systemctl status ollama      # 상태 확인  
 > % sudo systemctl stop ollama   # 정지
 > % ollama list                  # 설치된 모델 조회
@@ -20,6 +20,7 @@
 
 ### 1-2. API
 
+
 ### 1-3. Web prompt
 
 <br>
@@ -31,7 +32,8 @@
 - [gpt-oss no install](https://gpt-oss.com/)
 - [output price](https://openrouter.ai/)
 
-> ### 권장사양  
+### 2-1. 권장사양  
 > - gpt-oss-120b: ram(60gb), vram(16gb/24gb)  
 > - gpt-oss-20b: ram(16gb), vram(80gb/96gb)  
 
+### 2-2. 커스터마이징

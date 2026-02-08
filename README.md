@@ -36,8 +36,8 @@
 - [output price](https://openrouter.ai/)
 
 ### 2-1. 권장사양  
-> - gpt-oss-120b: ram(60gb), vram(16gb/24gb)    
-> - gpt-oss-20b: ram(16gb), vram(80gb/96gb)     
+- gpt-oss-120b: ram(60gb), vram(16gb/24gb)    
+- gpt-oss-20b: ram(16gb), vram(80gb/96gb)     
 
 ### 2-2. 커스터마이징
 - Ollama의 Modelfile을 사용하면 재훈련 없이 GPT-OSS 동작을 맞춤 설정할 수 있다.

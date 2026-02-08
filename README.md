@@ -40,15 +40,18 @@
 - 시스템 프롬프트를 설정하거나, 컨텍스트 크기를 조정하거나, 매개변수를 미세 조정할 수 있다.
 
 #### Modelfile 생성
-> FROM gpt-oss:20b  
-SYSTEM "You are a technical assistant specializing in Python programming. Provide concise, accurate code with comments."  
-PARAMETER temperature 0.5  
-PARAMETER num_ctx 4096
+> touch Modelfile  
+> nano Modilfile  
+  
+> FROM gpt-oss:20b    # 어떤 모델을 사용할지 지정   
+> SYSTEM "You are a technical assistant specializing in Python programming. Provide concise, accurate code with comments."    # 설정 프롬프트    
+> PARAMETER temperature 0.5    # 창의성(0-1, 높을 수록 창의성 높고, 낮을 수록 진실된 답변)    
+> PARAMETER num_ctx 4096       # (ctx, Token Context) 
 
 #### 사용자 정의 모델 빌드
 - Modelfile 이 있는 경로에서 실행
-> $ ollama create python-gpt-oss -f Modelfile  
-> $ ollama run python-gpt-oss
+> $ ollama create python-gpt-oss -f Modelfile    # 사용자가 정의한 모델 파일 생성
+> $ ollama run python-gpt-oss                    # 빌드한 파일 실행
 
 
 

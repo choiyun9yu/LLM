@@ -25,10 +25,9 @@
 
 <br>
 
-## 2.  gpt-oss
+## 2. [gpt-oss](https://openai.com/ko-KR/open-models/)
 - OpenAI의 오픈웨이트(open weight) 모델
 - license: Apach 2.0 
-- [gpt-oss](https://openai.com/ko-KR/open-models/)
 - [gpt-oss no install](https://gpt-oss.com/)
 - [output price](https://openrouter.ai/)
 
@@ -37,3 +36,37 @@
 > - gpt-oss-20b: ram(16gb), vram(80gb/96gb)  
 
 ### 2-2. 커스터마이징
+- Ollama의 Modelfile을 사용하면 재훈련 없이 GPT-OSS 동작을 맞춤 설정할 수 있다.
+- 시스템 프롬프트를 설정하거나, 컨텍스트 크기를 조정하거나, 매개변수를 미세 조정할 수 있다.
+
+#### Modelfile 생성
+> FROM gpt-oss:20b  
+SYSTEM "You are a technical assistant specializing in Python programming. Provide concise, accurate code with comments."  
+PARAMETER temperature 0.5  
+PARAMETER num_ctx 4096
+
+#### 사용자 정의 모델 빌드
+- Modelfile 이 있는 경로에서 실행
+> $ ollama create python-gpt-oss -f Modelfile  
+> $ ollama run python-gpt-oss
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

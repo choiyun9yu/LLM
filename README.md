@@ -5,7 +5,7 @@
 - 로컬 환경에서 AI 모델을 간편하게 사용할 수 있게 도와주는 도구
 - 명령어 한줄만 입력하면 원하는 AI 모델을 바로 설치하고 사용 가능
 
-> Quick Start  
+> ### Quick Start  
 > % curl -fsSL https://ollama.com/install.sh | sh    # 설치  
 > % systemctl status ollama      # 상태 확인  
 > % ollama list                  # 설치된 모델 조회

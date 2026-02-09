@@ -18,6 +18,7 @@
 ### 1-1. CLI
 ~~~
 % ollama run {modle name}      # 설치/실행
+% ollama rm {model name}   # 삭제
 % /bye                         # 대화 중단
 % ollama run gpt-oss:20b "양자 컴퓨팅을 간단한 용어로 설명해 줘"  # 대화형 없이 빠른 응답을 원하는 경우
 ~~~
@@ -47,20 +48,25 @@ print(response.choices[0].message.content)
 
 <br>
 
-#### 외부 포트 포워딩
+#### 외부 포트 포워딩 (진행중)
 ~~~ 
 % netstat -tuln     # 포트 수신 상태 조회
 ~~~
-- 127.0.0.1:portnumber 면 로컬에서 오는 요청만 듣고
-- 0.0.0.0:portNumber 면 외부에서 오는 요청도 들을 수 있음
+#### OLLAMA_HOST 변수
+- default: 127.0.0.1:11434, 루프백 인터페이스만 수신대기하며 동일한 시스템에서만 접근 가능
+- 0.0.0.0:11434, 외부에서 접근 가능
+
+
 
 ~~~
-% sudo systemctl edit ollama
+% sudo nano /etc/systemd/system/ollama.service
 
 [Service]
-Environment="OLLAMA_HOST=0.0.0.0:11434"
+
+Environment="OLLAMA_HOST=0.0.0.0:18080"
 ctrl + o -> Enter -> ctrl + x
 
+% sudo systemctl daemon-reload
 % sudo systemctl restart ollama
 ~~~
 
@@ -69,11 +75,10 @@ ctrl + o -> Enter -> ctrl + x
 
 #### Open Web UI
 ~~~
-% docker run -d -p 3000:8080 --name open-webui ghcr.io/open-webui/open-webui:main    # install
+% docker run -d -p 3000:8080 --name open-webui ghcr.io/open-webui/open-webui:main
 % docker logs -f open-webui    # info check
 ~~~
 - localhost:3000
-
 
 
 <br>
